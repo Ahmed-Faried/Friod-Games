@@ -193,18 +193,18 @@ class _HomePageState extends State<HomePage> {
 
     controller.addStatusListener((status) {
 
-      void playFromBeginningOnComplete() {
+
+
+      if ( status == ControllerStatus.completed ) {
         controller.playFromBeginning();
       }
-
-
       if ( status == ControllerStatus.ready ) {
-        playFromBeginningOnComplete();
+        controller.play();
 
       }
     });
 
-    controller.play();
+
 
 
 
