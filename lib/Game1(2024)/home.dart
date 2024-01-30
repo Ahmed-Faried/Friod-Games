@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:game1/Game1(2024)/LayoutBuilder/DeskTopLayout.dart';
-import 'package:game1/Game1(2024)/LayoutBuilder/MobileLayout.dart';
-import 'LayoutBuilder/AdaptiveLayout.dart';
-import 'LayoutBuilder/TabletLayout.dart';
+
+import '../LayoutBuilder/AdaptiveLayout.dart';
+import '../LayoutBuilder/DeskTopLayout.dart';
+import '../LayoutBuilder/MobileLayout.dart';
+import '../LayoutBuilder/TabletLayout.dart';
+import '../Screens/SignInScreen.dart';
+
 
 class HomePage extends StatelessWidget {
   @override
@@ -10,9 +13,9 @@ class HomePage extends StatelessWidget {
     // TODO: implement build
 
     return AdaptiveLayout(
-      mobileLayout:(context) => MobileLayoutScreen(),
-      tabletLayout: (context) => TabletLayout(),
-      desktopLayout: (context) => DesktopLayout(),
+      mobileLayout:(context) =>  SignInScreen()  , //const MobileLayoutScreen(),
+      tabletLayout: (context) => const TabletLayout(),
+      desktopLayout: (context) => const DesktopLayout(),
     );
   }
 }

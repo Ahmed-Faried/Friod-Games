@@ -1,8 +1,8 @@
 class MyColor {
   static int gridBackground=0xFFA2917D;
-  static int appBarBackground=0xFF766C62;
+  static int appBarBackground=0xFF6D5ED2;
   static int scoreHighScoreRePlayIconGameBackground=0xFF7C7171;
-  static int gridColorTwoFour=0xFFeee4da;
+  static int gridColorTwoFour=0xFFecc402;  // eee4da
   static int fontColorTwoFour=0xFF766c62;
   static int emptyGridBackground=0xFFbfafa0;
   static int gridColorEightSixtyFourTwoFiftySix=0xFFf5b27e;

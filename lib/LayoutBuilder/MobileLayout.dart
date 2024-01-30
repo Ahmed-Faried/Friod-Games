@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../FontSize/ResponsiveFontSize.dart';
+import '../Game1(2024)/game.dart';
+import '../Game1(2024)/grid.dart';
+import '../Game1(2024)/mycolor.dart';
+import '../Game1(2024)/tile.dart';
 
-import '../game.dart';
-import '../grid.dart';
-import '../mycolor.dart';
-import '../tile.dart';
 
 class MobileLayoutScreen extends StatefulWidget {
   const MobileLayoutScreen( {super.key});
@@ -190,11 +191,12 @@ class _MobileLayoutScreenState extends State<MobileLayoutScreen> {
 
 
     return Scaffold(
+      backgroundColor:const Color(0xff6D5ED2),
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(
+        title:  Text(
           'Froid 2048',
-          style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: getResponsiveFontSize( context,fontSize: 20), fontWeight: FontWeight.bold),
         ),
         backgroundColor: Color(MyColor.appBarBackground),
       ),
@@ -203,37 +205,45 @@ class _MobileLayoutScreenState extends State<MobileLayoutScreen> {
           padding: EdgeInsets.all(20.0),
           child: Column(
             children: <Widget>[
-              Container(
-                width: gridWidth * 1.7,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.0),
-                  color: Color(MyColor.scoreHighScoreRePlayIconGameBackground),
-                ),
-                height: gridWidth,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    const Text(
-                      'Score',
-                      style: TextStyle(
-                          fontSize: 15.0,
-                          color: Colors.white70,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(
-                      height: 3,
-                    ),
-                    Text(
-                      '${score}',
-                      style: TextStyle(
-                          fontSize: 20.0,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold),
-                    )
-                  ],
+              FittedBox(
+                fit: BoxFit.contain,
+
+                child: Container(
+                  width: gridWidth * 1.7,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Color(MyColor.scoreHighScoreRePlayIconGameBackground),
+                  ),
+                  height: gridWidth,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                       FittedBox(
+                         fit: BoxFit.scaleDown,
+
+                         child: Text(
+                          'Score',
+                          style: TextStyle(
+                              fontSize: getResponsiveFontSize( context,fontSize: 15),
+                              color: Colors.white70,
+                              fontWeight: FontWeight.bold),
+                      ),
+                       ),
+                      const SizedBox(
+                        height: 3,
+                      ),
+                      Text(
+                        '${score}',
+                        style: TextStyle(
+                            fontSize: getResponsiveFontSize( context,fontSize: 20),
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Container(
@@ -346,28 +356,45 @@ class _MobileLayoutScreenState extends State<MobileLayoutScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Text(
-                            'High Score',
-                            style: TextStyle(
-                                color: Colors.white70,
-                                fontWeight: FontWeight.bold),
+                          FittedBox(
+                            fit: BoxFit.scaleDown,
+
+                            child: Text(
+                              'High Score',
+                              style: TextStyle(
+                                fontSize: getResponsiveFontSize( context,fontSize: 16),
+                                  color: Colors.white70,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
                           FutureBuilder<String>(
                             future: getHighScore(),
                             builder: (ctx, snapshot) {
                               if (snapshot.hasData) {
-                                return Text(
-                                  "${snapshot.data}",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold),
+                                return FittedBox(
+                                  fit: BoxFit.scaleDown,
+
+                                  child: Text(
+                                    "${snapshot.data}",
+                                    style: TextStyle(
+                                        fontSize: getResponsiveFontSize( context,fontSize: 20),
+
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
+                                  ),
                                 );
                               } else {
-                                return Text(
-                                  '0',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold),
+                                return FittedBox(
+                                  fit: BoxFit.scaleDown,
+
+                                  child: Text(
+                                    '0',
+                                    style: TextStyle(
+                                        fontSize: getResponsiveFontSize( context,fontSize: 20),
+
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
+                                  ),
                                 );
                               }
                             },
