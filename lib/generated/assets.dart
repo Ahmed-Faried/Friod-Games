@@ -25,6 +25,7 @@ class Assets {
   static const String imagesAvatarWoman = 'assets/images/Avatar_Woman.svg';
   static const String imagesAvatarWoman2 = 'assets/images/Avatar_Woman2.svg';
   static const String imagesDiscord = 'assets/images/Discord.svg';
+  static const String imagesEllipse2640 = 'assets/images/Ellipse 2640.svg';
   static const String imagesFacebook = 'assets/images/Facebook.svg';
   static const String imagesFilter = 'assets/images/Filter.svg';
   static const String imagesGoogle = 'assets/images/Google.svg';

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:game1/Game1(2024)/home.dart';
+import 'package:game1/Screens/BottomBar/HomePageScreen/HomePageScreen.dart';
 import 'package:lordicon/lordicon.dart';
-import '../generated/assets.dart';
-import '../utils/app_styles.dart';
+import '../../generated/assets.dart';
+import '../../utils/app_styles.dart';
 
 class ChooseAvatar extends StatefulWidget {
   const ChooseAvatar({super.key});
@@ -24,7 +26,7 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
       if (status == ControllerStatus.completed && cont < 2) {
 
         if (cont == 1){
-          Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage()));
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePageScreen()));
         }
         cont++;
 
@@ -36,6 +38,8 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
       }
     });
     return Scaffold(
+      backgroundColor: Color(0xFF6D5ED2),
+
       body: Stack(
         alignment: Alignment.center,
         children: [
@@ -58,8 +62,15 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
                               ),
                             ),
                           ),
-                          Text("Welcome to Game",
-                              style: AppStyles.StyleMidium32),
+                          Column(
+                            children: [
+                              SizedBox(height: 25,),
+                              Text("Hi Ahmed",
+                                  style: AppStyles.StyleMidium32),
+                              Text("Choose your Avatar",
+                                  style: AppStyles.StyleMidium22),
+                            ],
+                          ),
                         ],
                       ),
                     ),
@@ -81,9 +92,10 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
                           return Container(
                             height: 100,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              color: Colors.grey,
+                              borderRadius: BorderRadius.circular(100),
+                              color: Colors.transparent,
                             ),
+                            child: SvgPicture.asset(Assets.imagesAvatarMan2),
                           );
                         },
                       ),
@@ -136,7 +148,7 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
                               child: IconButton(
                                 color: Color(0xFF6D5ED2),
                                 onPressed: () {
-                            setState(() {
+                                 setState(() {
                               ccont++ ;
 
                             });

@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../FontSize/ResponsiveFontSize.dart';
 import '../Game1(2024)/game.dart';
 import '../Game1(2024)/grid.dart';
 import '../Game1(2024)/mycolor.dart';
 import '../Game1(2024)/tile.dart';
+import '../utils/FontSize/ResponsiveFontSize.dart';
 
 
 class MobileLayoutScreen extends StatefulWidget {

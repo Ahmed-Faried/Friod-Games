@@ -4,7 +4,7 @@ import '../LayoutBuilder/AdaptiveLayout.dart';
 import '../LayoutBuilder/DeskTopLayout.dart';
 import '../LayoutBuilder/MobileLayout.dart';
 import '../LayoutBuilder/TabletLayout.dart';
-import '../Screens/SignInScreen.dart';
+import '../Screens/Signin/SignInScreen.dart';
 
 
 class HomePage extends StatelessWidget {

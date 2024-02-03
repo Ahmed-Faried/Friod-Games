@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:game1/Screens/ChooseAvatar.dart';
+import 'package:game1/Screens/ChooseAvatar/ChooseAvatar.dart';
 import 'package:game1/utils/app_styles.dart';
 import 'package:lordicon/lordicon.dart';
 
-import '../generated/assets.dart';
+import '../../generated/assets.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
