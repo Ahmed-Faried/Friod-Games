@@ -4,6 +4,7 @@ import 'package:game1/Screens/ChooseAvatar/ChooseAvatar.dart';
 import 'package:game1/utils/app_styles.dart';
 import 'package:lordicon/lordicon.dart';
 
+import '../../Network/local/shared_preferences.dart';
 import '../../generated/assets.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -13,6 +14,7 @@ class SignInScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var NameController = TextEditingController();
 
+    var AgeController = TextEditingController();
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -113,8 +115,8 @@ class SignInScreen extends StatelessWidget {
                   ),
                   child: Center(
                     child: TextFormField(
-                      controller: NameController,
-                      keyboardType : TextInputType.text ,
+                      controller: AgeController,
+                      keyboardType : TextInputType.number ,
                       validator: (value){
                         return null;
                       } ,
@@ -163,6 +165,9 @@ class SignInScreen extends StatelessWidget {
                     child: Icon(Icons.arrow_forward_outlined , color: Color(0xFF6D5ED2),),
                   ),
                   onTap: (){
+                    CacheHelper.saveData(key: 'Name', value: NameController.toString());
+                    CacheHelper.saveData(key: 'Age', value: AgeController.toString());
+
                     Navigator.push(context, MaterialPageRoute(builder: (context) => ChooseAvatar()));
                   },
                 )
