@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../LayoutBuilder/AdaptiveLayout.dart';
-import '../LayoutBuilder/DeskTopLayout.dart';
-import '../LayoutBuilder/MobileLayout.dart';
-import '../LayoutBuilder/TabletLayout.dart';
+import 'AdaptiveLayout.dart';
+import 'DeskTopLayout.dart';
+import 'MobileLayout.dart';
+import 'TabletLayout.dart';
 import '../Network/local/shared_preferences.dart';
 import '../Screens/BottomBar/HomePageScreen/HomePageScreen.dart';
 import '../Screens/ChooseAvatar/ChooseAvatar.dart';

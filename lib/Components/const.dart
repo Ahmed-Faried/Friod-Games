@@ -1,33 +1,17 @@
 //  abdullah.ahmed0@gmail.com
 
+import '../generated/assets.dart';
+
+List<String> AvatarValues = [
+ Assets.imagesSonicTest,
+ Assets.imagesDoctorAvatar3,
+ Assets.imagesManAvatar2,
+ Assets.imagesWomanTest1,
+ Assets.imagesManTest,
+ Assets.imagesWomanTest2,
+ Assets.imagesTest2,
+ Assets.imagesTest2,
+ Assets.imagesTest2,
 
 
-String? token = '';
-String? department = '';
-String? idPatient;
-String? National_ID;
-String? imagePatient ;
-String? imageDoctor;
-String? idDoctor;
-bool?  isdark;
-
-// DoctorDataModel? doctorDataModel;
-// PatientDataModel? patientDataModel;
-// PatientDataModel? patientDataModelFromNid;
-//
-// List<PatientDataModel> DataPatientID =[]  ;
-
- deleteAllData(){
-
- // doctorDataModel = null ;
- // patientDataModel = null ;
- // patientDataModelFromNid = null ;
- // DoctorCubit().ss = [] ;
- // DataPatientID =[]  ;
- // print(doctorDataModel?.data?.doctor.pId);
- // print(patientDataModel);
- // print(patientDataModelFromNid);
- // print(DataPatientID);
- // return doctorDataModel ;
-
-}
+];

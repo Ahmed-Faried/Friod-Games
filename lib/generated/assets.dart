@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String assetsImagesTest2 = 'assets/images/test2.svg';
   static const String iconsClockTime = 'assets/Icons/clock-time.gif';
   static const String iconsGiftIcon = 'assets/Icons/GiftIcon.gif';
   static const String iconsGoldIcon = 'assets/Icons/GoldIcon.gif';
@@ -10,6 +11,9 @@ class Assets {
   static const String iconsGoldIcon4 = 'assets/Icons/GoldIcon4.json';
   static const String iconsGoldIcon5 = 'assets/Icons/GoldIcon5.json';
   static const String iconsIcon1 = 'assets/Icons/Icon1.json';
+  static const String iconsIconLove = 'assets/Icons/Icon_love.svg';
+  static const String iconsIconNavigation = 'assets/Icons/Icon_navigation.svg';
+  static const String iconsIconUesr2 = 'assets/Icons/Icon_uesr2.svg';
   static const String iconsIconsdownload = 'assets/Icons/Iconsdownload.png';
   static const String iconsLoding1 = 'assets/Icons/Loding1.json';
   static const String iconsLoding2 = 'assets/Icons/Loding2.json';
@@ -25,6 +29,8 @@ class Assets {
   static const String imagesAvatarWoman = 'assets/images/Avatar_Woman.svg';
   static const String imagesAvatarWoman2 = 'assets/images/Avatar_Woman2.svg';
   static const String imagesDiscord = 'assets/images/Discord.svg';
+  static const String imagesDoctorAvatar2 = 'assets/images/DoctorAvatar2.svg';
+  static const String imagesDoctorAvatar3 = 'assets/images/DoctorAvatar3.png';
   static const String imagesEllipse2640 = 'assets/images/Ellipse 2640.svg';
   static const String imagesFacebook = 'assets/images/Facebook.svg';
   static const String imagesFilter = 'assets/images/Filter.svg';
@@ -33,12 +39,24 @@ class Assets {
   static const String imagesIconNavigationYallow = 'assets/images/IconNavigationYallow.svg';
   static const String imagesIconUesrBlue = 'assets/images/IconUesrBlue.svg';
   static const String imagesIconUesrWhite = 'assets/images/IconUesrWhite.svg';
+  static const String imagesManAvatar = 'assets/images/ManAvatar.jpg';
+  static const String imagesManAvatar2 = 'assets/images/ManAvatar2.png';
+  static const String imagesManTest = 'assets/images/manTest.png';
   static const String imagesPlayerListActive = 'assets/images/PlayerListActive.svg';
   static const String imagesPlayerListNotActive = 'assets/images/PlayerListNotActive.svg';
   static const String imagesRectangle4 = 'assets/images/Rectangle4.svg';
   static const String imagesRectangleColor = 'assets/images/RectangleColor.svg';
+  static const String imagesSonicAvatar = 'assets/images/SonicAvatar.jpg';
+  static const String imagesSonicTest = 'assets/images/sonicTest.png';
+  static const String imagesSoonAvatar = 'assets/images/SoonAvatar.jpg';
   static const String imagesSoonCircle = 'assets/images/SoonCircle.svg';
   static const String imagesSoonLargePage = 'assets/images/SoonLargePage.svg';
+  static const String imagesSoonPage2 = 'assets/images/SoonPage2.svg';
+  static const String imagesTest2 = 'assets/images/test2.png';
   static const String imagesWhatsApp = 'assets/images/WhatsApp.svg';
+  static const String imagesWomanAvatar = 'assets/images/WomanAvatar.jpg';
+  static const String imagesWomanAvatar2 = 'assets/images/WomanAvatar2.jpg';
+  static const String imagesWomanTest1 = 'assets/images/WomanTest1.png';
+  static const String imagesWomanTest2 = 'assets/images/WomanTest2.png';
 
 }

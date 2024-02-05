@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:game1/Game1(2024)/AdaptiveLayoutScreen.dart';
+import 'package:game1/LayoutBuilder/AdaptiveLayoutScreen.dart';
 import 'package:game1/Screens/BottomBar/HomePageScreen/HomePageScreen.dart';
 import 'package:lordicon/lordicon.dart';
+import '../../Components/const.dart';
 import '../../Network/local/shared_preferences.dart';
 import '../../generated/assets.dart';
 import '../../utils/app_styles.dart';
@@ -15,55 +16,46 @@ class ChooseAvatar extends StatefulWidget {
 }
 
 class _ChooseAvatarState extends State<ChooseAvatar> {
+
+
   int selectedContainerIndex = 9;
 
-  List<String> AvatarValues = [
-    Assets.imagesSoonCircle,
-    Assets.imagesAvatarMan2,
-    Assets.imagesAvatarMan2,
-    Assets.imagesSoonCircle,
-    Assets.imagesSoonCircle,
-    Assets.imagesSoonCircle,
-    Assets.imagesSoonCircle,
-    Assets.imagesSoonCircle,
-    Assets.imagesSoonCircle,
-  ];
+
 
   int indexs = -1;
-  Color enableColor = Colors.red;
-  Color disableColor = Colors.transparent;
+  // Color enableColor = Colors.red;
+  // Color disableColor = Colors.transparent;
 
-  void changeAvatar(index) {
-    selectedContainerIndex = index;
-    setState(() {});
-  }
+  // void changeAvatar(index) {
+  //   selectedContainerIndex = index;
+  //   setState(() {});
+  // }
+  //
+  // void changeIndexAvatar(int x) {
+  //   indexs = x;
+  //   setState(() {});
+  // }
 
-  void changeIndexAvatar(int x) {
-    indexs = x;
-    setState(() {});
-  }
-
-  void printsss() {
-    print(AvatarValues[selectedContainerIndex]);
-  }
-
-  void printsIndex() {
-    print(AvatarValues[indexs]);
-  }
 
   int ccont = 0;
   bool chooseAvatar = false;
 
   @override
   Widget build(BuildContext context) {
+    var NameV = CacheHelper.getData(key: "Name");
+
     var controller = IconController.assets(Assets.iconsLoding2);
+
     int cont = 0;
 
     controller.addStatusListener((status) {
       if (status == ControllerStatus.completed && cont < 2) {
         if (cont == 1) {
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePageScreen())) ;
-
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => HomePageScreen()),
+                (Route<dynamic> route) => false,
+          );
         }
         cont++;
 
@@ -74,7 +66,7 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
       }
     });
     return Scaffold(
-      backgroundColor: Color(0xFF6D5ED2),
+      backgroundColor: Colors.white,
       body: Stack(
         alignment: Alignment.center,
         children: [
@@ -102,7 +94,7 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
                         SizedBox(
                           height: 25,
                         ),
-                        Text("Hi Ahmed", style: AppStyles.StyleMidium32),
+                        Text("Hi ${NameV.toString()}", style: AppStyles.StyleMidium32),
                         Text("Choose your Avatar",
                             style: AppStyles.StyleMidium22),
                       ],
@@ -122,7 +114,7 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
                       childAspectRatio: 1,
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10),
-                  itemCount: 9,
+                  itemCount: AvatarValues.length,
                   itemBuilder: (BuildContext, int) {
                     return GestureDetector(
                       child: Container(
@@ -131,13 +123,14 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
                           borderRadius: BorderRadius.circular(100),
                           color: Colors.transparent,
                         ),
-                        child: SvgPicture.asset(Assets.imagesAvatarMan2),
+                        child: Image.asset(AvatarValues[int]),
                       ),
                       onTap: () {
-                        if (int == 0) {
-                          chooseAvatar = !chooseAvatar;
+                        // if (chooseAvatar == tr) {
+                          chooseAvatar = true;
+                          indexs = int ;
                           setState(() {});
-                        }
+                        // }
                       },
                     );
                   },
@@ -203,7 +196,8 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
                           onPressed: () {
                             if (chooseAvatar == true) {
                               CacheHelper.saveData(
-                                  key: 'chooseAvatar', value: int);
+                                  key: 'chooseAvatar', value: AvatarValues[indexs]);
+                              print(AvatarValues[indexs]);
 
                               setState(() {
                                 ccont++;

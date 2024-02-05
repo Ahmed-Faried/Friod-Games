@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:game1/utils/app_styles.dart';
 
 import '../generated/assets.dart';
 import 'ImageGame.dart';
@@ -23,14 +24,48 @@ class CardListGames extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          color: Colors.grey
+
+            gradient:       gameName == "Soon" ?
+            LinearGradient(
+              colors: [
+                Color(0xe6fc2172),
+                Color(0xf2fbbc05),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.topRight,
+            )
+             :
+            LinearGradient(
+              colors: [
+                Color(0xffFC2172),
+                Color(0xffFBBC05),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.topRight,
+            )
       ),
 
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+
+      child:
+      gameName == "Soon" ?
+      Container(
+        height: 135,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text("Soon", style: AppStyles.StyleRegular64,),
+
+          ],
+        ),
+      )
+          :
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
+
             flex: 1,
             child: ImageGame(imageGame: imageGame,),
           ),
@@ -42,7 +77,8 @@ class CardListGames extends StatelessWidget {
             ),
           )
         ],
-      ),
+      )
+
     );
   }
 }

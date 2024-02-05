@@ -8,7 +8,7 @@ import 'package:game1/utils/app_styles.dart';
 import 'package:lordicon/lordicon.dart';
 import 'Bloc/bloc_observer.dart';
 import 'Components/const.dart';
-import 'Game1(2024)/AdaptiveLayoutScreen.dart';
+import 'LayoutBuilder/AdaptiveLayoutScreen.dart';
 import 'HomePageBloc/HomePageCubit.dart';
 import 'Network/local/shared_preferences.dart';
 import 'Network/remote/dioHelper.dart';
@@ -85,7 +85,7 @@ class MyApp extends StatelessWidget {
           splashTransition: SplashTransition.fadeTransition,
           backgroundColor:  Color(0xff53489A),//53489A //6D5ED2
           splashIconSize: 500,
-          duration: 1000,
+          duration: 5000,
         ),
         debugShowCheckedModeBanner: false,
       ),

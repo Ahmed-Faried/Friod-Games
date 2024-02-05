@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:game1/Screens/GameOne/GameOne.dart';
+import 'package:game1/generated/assets.dart';
 import '../Model/ListGamesModels.dart';
 import '../Screens/BottomBar/HomePageScreen/HomePageScreen.dart';
+import '../Screens/GameTwo/GameTwo.dart';
 import 'CardListGamesScreen.dart';
 
 class CustomSliverListGames extends StatelessWidget {
@@ -19,6 +22,10 @@ class CustomSliverListGames extends StatelessWidget {
             onTap: (){
               if(index == 0) {
                 Navigator.push(context, MaterialPageRoute(builder: (context)=> GameOne()));
+
+              }
+              if(index == 1) {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> GameTwo()));
 
               }
             },

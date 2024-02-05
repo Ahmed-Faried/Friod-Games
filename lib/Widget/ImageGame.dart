@@ -13,13 +13,13 @@ final String imageGame ;
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
-      color: Colors.yellow,
-      child: FittedBox(
-        child: SvgPicture.asset(imageGame,),
-        fit: BoxFit.fill,
-        alignment: Alignment.centerLeft,
-      ),
+      // height: 150,
+        decoration: BoxDecoration(
+          // color: Colors.yellow,
+
+
+        ),
+       child: SvgPicture.asset(imageGame,),
     );
   }
 }

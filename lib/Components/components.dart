@@ -105,7 +105,7 @@ void toastShow({required msg, required toastStates state}) =>
     Fluttertoast.showToast(
         msg: msg,
         toastLength: Toast.LENGTH_LONG,
-        gravity: ToastGravity.BOTTOM,
+        gravity: ToastGravity.TOP,
         timeInSecForIosWeb: 5,
         backgroundColor: chooseToastColor(state),
         textColor: Colors.white,

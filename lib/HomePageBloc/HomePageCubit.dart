@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../Components/components.dart';
 import '../Screens/BottomBar/GamesScreen/GamesScreen.dart';
+import '../Screens/BottomBar/ProfileScreen/ProfileScreen.dart';
 import '../Screens/ChooseAvatar/ChooseAvatar.dart';
 import 'HomePageStates.dart';
 
@@ -73,7 +74,7 @@ class HomePageCubit extends Cubit<HomePageStates>{
   [
     GamesScreen(),
 
-    ChooseAvatar(),
+    ProfileScreen(),
 
   ];
 

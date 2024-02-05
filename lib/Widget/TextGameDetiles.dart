@@ -14,7 +14,7 @@ class TextGameDetilse extends StatelessWidget {
   Widget build(BuildContext context ) {
     return Container(
       height: 150,
-      color: Colors.white,
+      // color: Colors.white,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 30.0),
         child: Column(

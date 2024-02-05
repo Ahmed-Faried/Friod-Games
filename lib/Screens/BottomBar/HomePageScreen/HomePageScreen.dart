@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,6 +7,7 @@ import 'package:game1/generated/assets.dart';
 import 'package:game1/utils/app_styles.dart';
 import '../../../HomePageBloc/HomePageCubit.dart';
 import '../../../HomePageBloc/HomePageStates.dart';
+import '../HartScreen/HartScreen.dart';
 
 class HomePageScreen extends StatelessWidget {
   HomePageScreen({Key? key}) : super(key: key);
@@ -68,16 +70,19 @@ class HomePageScreen extends StatelessWidget {
           ),
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
-          floatingActionButton: buildFloatingActionButton(),
+          floatingActionButton: buildFloatingActionButton(context),
         );
       },
     );
   }
 
-  Widget buildFloatingActionButton() {
+  Widget buildFloatingActionButton(context) {
     return FloatingActionButton.extended(
       shape: CircleBorder(),
-      onPressed: () {},
+      onPressed: () {
+
+        Navigator.push( context , MaterialPageRoute(builder: (context ) => HartScreen()));
+      },
       label: Container(
         width: 75,
         height: 75,
@@ -98,7 +103,7 @@ class HomePageScreen extends StatelessWidget {
           fit: BoxFit.scaleDown,
 
           child: SvgPicture.asset(
-            Assets.imagesHartPink,
+            Assets.iconsIconLove,
             width: 60,
             height: 60,
             fit: BoxFit.fill,
@@ -118,8 +123,8 @@ class HomePageScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         mainAxisSize: MainAxisSize.max,
         children: [
-          buildColumn(SvgPicture.asset(Assets.imagesIconNavigationYallow) , Text("Games")),
-          buildColumn(SvgPicture.asset(Assets.imagesIconUesrBlue), Text("Profile")),
+          buildColumn(SvgPicture.asset(Assets.iconsIconNavigation ) , Text("Games")),
+          buildColumn(SvgPicture.asset(Assets.iconsIconUesr2), Text("Profile")),
         ],
       ),
     );
