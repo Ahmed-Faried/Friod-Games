@@ -1,9 +1,6 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-
 import '../Network/local/shared_preferences.dart';
-import 'const.dart';
 
 
 Widget CardArticleBulder(article, context) => InkWell(
@@ -101,15 +98,15 @@ void navigateTo(context, Widget) =>
 void navigateAndFinish(context, Widget) => Navigator.pushAndRemoveUntil(
     context, MaterialPageRoute(builder: (context) => Widget), (route) => false);
 
-void toastShow({required msg, required toastStates state}) =>
-    Fluttertoast.showToast(
-        msg: msg,
-        toastLength: Toast.LENGTH_LONG,
-        gravity: ToastGravity.TOP,
-        timeInSecForIosWeb: 5,
-        backgroundColor: chooseToastColor(state),
-        textColor: Colors.white,
-        fontSize: 16.0);
+// void toastShow({required msg, required toastStates state}) =>
+//     Fluttertoast.showToast(
+//         msg: msg,
+//         toastLength: Toast.LENGTH_LONG,
+//         gravity: ToastGravity.TOP,
+//         timeInSecForIosWeb: 5,
+//         backgroundColor: chooseToastColor(state),
+//         textColor: Colors.white,
+//         fontSize: 16.0);
 
 enum toastStates { SUCCESS, ERROR, WARNING }
 
@@ -526,8 +523,8 @@ Widget EditProfileRow(context, String title, String hint, controller) => Row(
                     onTap: () {},
                     validator: (vaule) {
                       if (vaule!.isEmpty) {
-                        toastShow(
-                            msg: '$title isEmpty', state: toastStates.WARNING);
+                      //   toastShow(
+                      //       msg: '$title isEmpty', state: toastStates.WARNING);
                         return '.';
                       }
                     },

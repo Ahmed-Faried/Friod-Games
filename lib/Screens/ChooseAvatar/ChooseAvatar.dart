@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:game1/LayoutBuilder/AdaptiveLayoutScreen.dart';
 import 'package:game1/Screens/BottomBar/HomePageScreen/HomePageScreen.dart';
 import 'package:lordicon/lordicon.dart';
 import '../../Components/const.dart';
 import '../../Network/local/shared_preferences.dart';
+import '../../Widget/CustomSliverGridChooseAvatar/CustomSliverGridChooseAvatar.dart';
 import '../../generated/assets.dart';
 import '../../utils/app_styles.dart';
 
@@ -18,55 +17,51 @@ class ChooseAvatar extends StatefulWidget {
 class _ChooseAvatarState extends State<ChooseAvatar> {
 
 
-  int selectedContainerIndex = 9;
 
 
-
-  int indexs = -1;
-  // Color enableColor = Colors.red;
-  // Color disableColor = Colors.transparent;
-
-  // void changeAvatar(index) {
-  //   selectedContainerIndex = index;
-  //   setState(() {});
-  // }
-  //
-  // void changeIndexAvatar(int x) {
-  //   indexs = x;
-  //   setState(() {});
-  // }
-
-
-  int ccont = 0;
-  bool chooseAvatar = false;
 
   @override
   Widget build(BuildContext context) {
-    var NameV = CacheHelper.getData(key: "Name");
+    var controller = IconController.assets(Assets.iconsLoding2 );
 
-    var controller = IconController.assets(Assets.iconsLoding2);
 
-    int cont = 0;
 
     controller.addStatusListener((status) {
-      if (status == ControllerStatus.completed && cont < 2) {
-        if (cont == 1) {
-          Navigator.pushAndRemoveUntil(
-            context,
-            MaterialPageRoute(builder: (context) => HomePageScreen()),
-                (Route<dynamic> route) => false,
-          );
-        }
-        cont++;
-
-        controller.playFromBeginning();
-      }
       if (status == ControllerStatus.ready) {
         controller.play();
+
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => HomePageScreen()),
+              (Route<dynamic> route) => false,
+        );
+
       }
+      // if (status == ControllerStatus.completed && cont < 2) {
+      //   if (cont == 1) {
+      //
+      //     controller.pause();
+      //     cont = 0 ;
+      //     Navigator.pushAndRemoveUntil(
+      //       context,
+      //       MaterialPageRoute(builder: (context) => HomePageScreen()),
+      //           (Route<dynamic> route) => false,
+      //     );
+      //   }
+      //   cont++;
+      //   controller.playFromBeginning();
+      // }
+
+
     });
+
+
+
+
+
+
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xff6D5ED2).withOpacity(0.75),
       body: Stack(
         alignment: Alignment.center,
         children: [
@@ -78,7 +73,7 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
                   children: [
                     Container(
                       width: double.infinity,
-                      height: 188,
+                      height: 150,
                       decoration: ShapeDecoration(
                         color: Color(0xFF53489A),
                         shape: RoundedRectangleBorder(
@@ -87,6 +82,14 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
                             bottomRight: Radius.circular(20),
                           ),
                         ),
+                        shadows: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.3),
+                            spreadRadius: 2,
+                            blurRadius: 5,
+                            offset: Offset(0, 3), // changes position of shadow
+                          ),
+                        ],
                       ),
                     ),
                     Column(
@@ -106,36 +109,7 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
                   child: SizedBox(
                 height: 15,
               )),
-              SliverPadding(
-                padding: EdgeInsets.all(8.0),
-                sliver: SliverGrid.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      childAspectRatio: 1,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10),
-                  itemCount: AvatarValues.length,
-                  itemBuilder: (BuildContext, int) {
-                    return GestureDetector(
-                      child: Container(
-                        height: 100,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          color: Colors.transparent,
-                        ),
-                        child: Image.asset(AvatarValues[int]),
-                      ),
-                      onTap: () {
-                        // if (chooseAvatar == tr) {
-                          chooseAvatar = true;
-                          indexs = int ;
-                          setState(() {});
-                        // }
-                      },
-                    );
-                  },
-                ),
-              ),
+              CustomChooseSliverGridAvatar(),
               SliverToBoxAdapter(
                   child: SizedBox(
                 height: 35,
@@ -152,10 +126,10 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
                         decoration: ShapeDecoration(
                           shadows: [
                             BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              spreadRadius: 5,
-                              blurRadius: 7,
-                              offset: Offset(0, 3),
+                              color: Colors.black.withOpacity(0.3),
+                              spreadRadius: 2,
+                              blurRadius: 5,
+                              offset: Offset(0, 3), // changes position of shadow
                             ),
                           ],
                           color: Color(0xFF6D5ED2),
@@ -182,11 +156,11 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
                           ),
                           shadows: [
                             BoxShadow(
-                              color: Color(0x3F000000),
-                              blurRadius: 2,
-                              offset: Offset(0, 2),
-                              spreadRadius: 0,
-                            )
+                              color: Colors.black.withOpacity(0.3),
+                              spreadRadius: 2,
+                              blurRadius: 5,
+                              offset: Offset(0, 3), // changes position of shadow
+                            ),
                           ],
                         ),
                         child: IconButton(
@@ -200,7 +174,7 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
                               print(AvatarValues[indexs]);
 
                               setState(() {
-                                ccont++;
+                                cont = 1;
                               });
                             }
                           },
@@ -215,7 +189,7 @@ class _ChooseAvatarState extends State<ChooseAvatar> {
               ),
             ],
           ),
-          ccont >= 1
+          cont == 1
               ? Container(
                   color: Colors.black.withOpacity(0.5),
                   child: Center(

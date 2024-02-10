@@ -6,16 +6,16 @@ import '../../utils/app_styles.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     super.key,
-    required this.Titile, required this.Pop
+    required this.titile, required this.Pop
   });
-  final String  Titile;
+  final String  titile;
   final bool  Pop ;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(
-        Titile,
+        titile,
         style: AppStyles.StyleRegular20,
       ),
       centerTitle: true,

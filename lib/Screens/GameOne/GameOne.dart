@@ -204,7 +204,7 @@ class _GameOneState extends State<GameOne> {
       //   ),
       //   backgroundColor: Color(MyColor.appBarBackground),
       // ),
-      appBar: CustomAppBar(Titile: '2024', Pop: true,),
+      appBar: CustomAppBar(titile: '2024', Pop: true,),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(20.0),

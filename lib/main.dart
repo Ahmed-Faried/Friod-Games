@@ -12,6 +12,7 @@ import 'LayoutBuilder/AdaptiveLayoutScreen.dart';
 import 'HomePageBloc/HomePageCubit.dart';
 import 'Network/local/shared_preferences.dart';
 import 'Network/remote/dioHelper.dart';
+import 'Test Screens ChatGPT/List Age.dart';
 import 'generated/assets.dart';
 
 
@@ -67,26 +68,27 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
             fontFamily: 'StarJedi'
         ),
-        home: AnimatedSplashScreen(
-          splash: Column(
-            children: [
-              SizedBox(height: 135,),
-
-              Text("Froid Games" , style: AppStyles.StyleBold40,),
-              SizedBox(height: 25,),
-              IconViewer(
-                controller: controller,
-                width: 140,
-                height: 140,
-              ),
-            ],
-          ),
-          nextScreen: AdaptiveLayoutScreen(),
-          splashTransition: SplashTransition.fadeTransition,
-          backgroundColor:  Color(0xff53489A),//53489A //6D5ED2
-          splashIconSize: 500,
-          duration: 5000,
-        ),
+        // home: AnimatedSplashScreen(
+        //   splash: Column(
+        //     children: [
+        //       SizedBox(height: 135,),
+        //
+        //       Text("Froid Games" , style: AppStyles.StyleBold40,),
+        //       SizedBox(height: 25,),
+        //       IconViewer(
+        //         controller: controller,
+        //         width: 140,
+        //         height: 140,
+        //       ),
+        //     ],
+        //   ),
+        //   nextScreen: AdaptiveLayoutScreen(),
+        //   splashTransition: SplashTransition.fadeTransition,
+        //   backgroundColor:  Color(0xff53489A),//53489A //6D5ED2
+        //   splashIconSize: 500,
+        //   duration: 5000,
+        // ),
+        home: ListAge(),
         debugShowCheckedModeBanner: false,
       ),
     );

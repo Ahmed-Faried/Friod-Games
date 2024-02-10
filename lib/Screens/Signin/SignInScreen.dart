@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:game1/Screens/ChooseAvatar/ChooseAvatar.dart';
 import 'package:game1/utils/app_styles.dart';
-import 'package:lordicon/lordicon.dart';
-
-import '../../Components/components.dart';
 import '../../Network/local/shared_preferences.dart';
 import '../../generated/assets.dart';
 
@@ -82,8 +79,8 @@ class SignInScreen extends StatelessWidget {
                     keyboardType: TextInputType.text,
                     validator: (value) {
                       if (value!.isEmpty) {
-                        toastShow(
-                            msg: 'Name isEmpty', state: toastStates.WARNING);
+                        // toastShow(
+                        //     msg: 'Name isEmpty', state: toastStates.WARNING);
                         return "* This field is required ";
                       }
                     },
@@ -129,8 +126,8 @@ class SignInScreen extends StatelessWidget {
                         keyboardType: TextInputType.number,
                         validator: (value) {
                           if (value!.isEmpty) {
-                            toastShow(
-                                msg: 'Age isEmpty', state: toastStates.WARNING);
+                            // toastShow(
+                            //     msg: 'Age isEmpty', state: toastStates.WARNING);
                             return "* This field is required";
                           }
                         },

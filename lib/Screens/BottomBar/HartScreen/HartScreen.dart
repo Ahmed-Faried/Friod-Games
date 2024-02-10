@@ -11,7 +11,7 @@ class HartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       backgroundColor: Color(0xff6D5ED2),
-      appBar: CustomAppBar(Titile: "Soon",Pop :true),
+      appBar: CustomAppBar(titile: "Soon",Pop :true),
       body: Center(child: SvgPicture.asset(Assets.imagesSoonPage2)),
     );
   }

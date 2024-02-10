@@ -38,7 +38,7 @@ class _GamesScreenState extends State<GamesScreen> {
 
     return Scaffold(
       backgroundColor: Color(0xff6D5ED2),
-      appBar: CustomAppBar(Titile: "Games", Pop: false,),
+      appBar: CustomAppBar(titile: "Games", Pop: false,),
       body: Padding(
         padding: const EdgeInsets.all(18.0),
         child: CustomSliverListGames(list: Games,),

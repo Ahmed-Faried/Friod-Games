@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:game1/Components/components.dart';
-import 'package:game1/Screens/BottomBar/HomePageScreen/HomePageScreen.dart';
 import 'package:game1/Widget/CustomAppBar/CustomAppBar.dart';
 import 'package:lordicon/lordicon.dart';
 import '../../../Components/const.dart';
 import '../../../Network/local/shared_preferences.dart';
+import '../../../Widget/CustomSliverGridChooseAvatar/CustomSliverGridChooseAvatar.dart';
 import '../../../generated/assets.dart';
 import '../../../utils/app_styles.dart';
 
@@ -19,31 +18,11 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
 
 
-  int selectedContainerIndex = 9;
-
-  int indexs = -1;
-  // Color enableColor = Colors.red;
-  // Color disableColor = Colors.transparent;
-
-  // void changeAvatar(index) {
-  //   selectedContainerIndex = index;
-  //   setState(() {});
-  // }
-  //
-  // void changeIndexAvatar(int x) {
-  //   indexs = x;
-  //   setState(() {});
-  // }
-  int ccont = 0;
-  bool chooseAvatar = false;
-
   @override
   Widget build(BuildContext context) {
-    var NameV = CacheHelper.getData(key: "Name");
 
     var controller = IconController.assets(Assets.iconsLoding2);
 
-    int cont = 0;
 
     controller.addStatusListener((status) {
       if (status == ControllerStatus.completed && cont < 2) {
@@ -52,15 +31,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
         controller.playFromBeginning();
         if (cont == 1) {
-        toastShow(msg: "Done", state: toastStates.SUCCESS);
+        // toastShow(msg: "Done", state: toastStates.SUCCESS);
         }
       }
       if (status == ControllerStatus.ready) {
         controller.play();
       }
     });
+
+
     return Scaffold(
-      appBar: CustomAppBar(Titile: " Hi ${NameV.toString()}" ,Pop: true,),
+      appBar: CustomAppBar(titile: " Hi ${NameV.toString()}" ,Pop: false,),
       backgroundColor: Color(0xff6D5ED2).withOpacity(0.75),
 
       body: Stack(
@@ -72,50 +53,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   child: SizedBox(
                     height: 15,
                   )),
-              SliverPadding(
-                padding: EdgeInsets.all(8.0),
-                sliver: SliverGrid.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      childAspectRatio: 1,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10),
-                  itemCount: AvatarValues.length,
-                  itemBuilder: (BuildContext, int) {
-                    return GestureDetector(
-                      child: Container(
-                        height: 100,
-                        decoration: BoxDecoration(
-                          border:  indexs == int ? Border.all(color: Colors.black , width: 5)
-                          : Border.all(color: Colors.transparent),
-                          borderRadius: BorderRadius.circular(100),
-                          color: Colors.transparent,
-                        ),
-                        child: Image.asset(AvatarValues[int] ,),
-                      ),
-                      onTap: () {
-                        if(AvatarValues[int] ==  Assets.imagesTest2){
-                          chooseAvatar = false;
-                          setState(() {
-
-                          });
-                          print(AvatarValues[int]);
-                        }else{
-                          chooseAvatar = true;
-                          setState(() {
-                            indexs = int ;
-                            print(AvatarValues[int]);
-
-                          });
-                        }
-                        // if (chooseAvatar == tr) {
-
-                        // }
-                      },
-                    );
-                  },
-                ),
-              ),
+              CustomChooseSliverGridAvatar(),
               SliverToBoxAdapter(
                   child: SizedBox(
                     height: 35,
@@ -180,7 +118,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               print(AvatarValues[indexs]);
 
                               setState(() {
-                                ccont++;
+                                cont++;
                               });
                             }
                           },
@@ -195,7 +133,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ],
           ),
-          ccont >= 1
+          cont >= 1
               ? Container(
             color: Colors.black.withOpacity(0.5),
             child: Center(
@@ -211,4 +149,5 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
   }
+
 }

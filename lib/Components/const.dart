@@ -1,5 +1,6 @@
 //  abdullah.ahmed0@gmail.com
 
+import '../Network/local/shared_preferences.dart';
 import '../generated/assets.dart';
 
 List<String> AvatarValues = [
@@ -15,3 +16,8 @@ List<String> AvatarValues = [
 
 
 ];
+
+int indexs = -1;
+bool chooseAvatar = false;
+int cont = 0;
+var NameV = CacheHelper.getData(key: "Name");
