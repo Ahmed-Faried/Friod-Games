@@ -1,18 +1,18 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:game1/Screens/BottomBar/HomePageScreen/HomePageScreen.dart';
 import 'package:game1/Screens/ChooseAvatar/ChooseAvatar.dart';
-import 'package:game1/Screens/Signin/SignInScreen.dart';
 import 'package:game1/utils/app_styles.dart';
 import 'package:lordicon/lordicon.dart';
 import 'Bloc/bloc_observer.dart';
-import 'Components/const.dart';
 import 'LayoutBuilder/AdaptiveLayoutScreen.dart';
 import 'HomePageBloc/HomePageCubit.dart';
 import 'Network/local/shared_preferences.dart';
 import 'Network/remote/dioHelper.dart';
-import 'Test Screens ChatGPT/List Age.dart';
+import 'Test Screens ChatGPT/Old Game.dart';
+import 'Test Screens ChatGPT/tableTest.dart';
+import 'Test Screens ChatGPT/انيميشن/Animations.dart';
+import 'Test Screens ChatGPT/انيميشن/rotate.dart';
 import 'generated/assets.dart';
 
 
@@ -68,27 +68,27 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
             fontFamily: 'StarJedi'
         ),
-        // home: AnimatedSplashScreen(
-        //   splash: Column(
-        //     children: [
-        //       SizedBox(height: 135,),
-        //
-        //       Text("Froid Games" , style: AppStyles.StyleBold40,),
-        //       SizedBox(height: 25,),
-        //       IconViewer(
-        //         controller: controller,
-        //         width: 140,
-        //         height: 140,
-        //       ),
-        //     ],
-        //   ),
-        //   nextScreen: AdaptiveLayoutScreen(),
-        //   splashTransition: SplashTransition.fadeTransition,
-        //   backgroundColor:  Color(0xff53489A),//53489A //6D5ED2
-        //   splashIconSize: 500,
-        //   duration: 5000,
-        // ),
-        home: ListAge(),
+        home: AnimatedSplashScreen(
+          splash: Column(
+            children: [
+              SizedBox(height: 135,),
+
+              Text("Froid Games" , style: AppStyles.StyleBold40,),
+              SizedBox(height: 25,),
+              IconViewer(
+                controller: controller,
+                width: 140,
+                height: 140,
+              ),
+            ],
+          ),
+          nextScreen: AdaptiveLayoutScreen(),
+          splashTransition: SplashTransition.fadeTransition,
+          backgroundColor:  Color(0xff53489A),//53489A //6D5ED2
+          splashIconSize: 500,
+          duration: 5000,
+        ),
+        // home: DataTable2SimpleDemo(),
         debugShowCheckedModeBanner: false,
       ),
     );

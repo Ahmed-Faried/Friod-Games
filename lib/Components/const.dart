@@ -10,14 +10,39 @@ List<String> AvatarValues = [
  Assets.imagesWomanTest1,
  Assets.imagesManTest,
  Assets.imagesWomanTest2,
- Assets.imagesTest2,
- Assets.imagesTest2,
- Assets.imagesTest2,
+ Assets.imagesSoonBlack,
+ Assets.imagesSoonBlack,
+ Assets.imagesSoonBlack,
 
-
+];
+List<String> ageRanges = [
+ 'Select Age',
+ 'Under 10',
+ '11',
+ '12',
+ '13',
+ '14',
+ '15',
+ '16',
+ '17',
+ '18',
+ '19',
+ '20',
+ '21',
+ '22',
+ '23',
+ '24',
+ '25',
+ '26',
+ '27',
+ '28',
+ '29',
+ '30',
+ 'Over 30',
 ];
 
 int indexs = -1;
 bool chooseAvatar = false;
 int cont = 0;
 var NameV = CacheHelper.getData(key: "Name");
+String selectedAge = "Select Age";

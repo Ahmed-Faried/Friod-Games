@@ -36,7 +36,7 @@ class _CustomChooseSliverGridAvatarState extends State<CustomChooseSliverGridAva
               child: Image.asset(AvatarValues[index]),
             ),
             onTap: () {
-              if (AvatarValues[index] == Assets.imagesTest2) {
+              if (AvatarValues[index] == Assets.imagesSoonBlack) {
                 chooseAvatar = false;
               } else {
                 chooseAvatar = true;

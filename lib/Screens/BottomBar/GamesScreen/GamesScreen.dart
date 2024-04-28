@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:game1/utils/app_styles.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '../../../Model/ListGamesModels.dart';
 import '../../../Network/local/shared_preferences.dart';
 import '../../../Widget/CardListGamesScreen.dart';

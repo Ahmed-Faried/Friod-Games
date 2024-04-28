@@ -49,6 +49,7 @@ class Assets {
   static const String imagesSonicAvatar = 'assets/images/SonicAvatar.jpg';
   static const String imagesSonicTest = 'assets/images/sonicTest.png';
   static const String imagesSoonAvatar = 'assets/images/SoonAvatar.jpg';
+  static const String imagesSoonBlack = 'assets/images/SoonBlack.png';
   static const String imagesSoonCircle = 'assets/images/SoonCircle.svg';
   static const String imagesSoonLargePage = 'assets/images/SoonLargePage.svg';
   static const String imagesSoonPage2 = 'assets/images/SoonPage2.svg';
