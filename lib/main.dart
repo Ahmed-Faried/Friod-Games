@@ -1,18 +1,22 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:game1/Screens/ChooseAvatar/ChooseAvatar.dart';
 import 'package:game1/utils/app_styles.dart';
 import 'package:lordicon/lordicon.dart';
 import 'Bloc/bloc_observer.dart';
 import 'LayoutBuilder/AdaptiveLayoutScreen.dart';
 import 'HomePageBloc/HomePageCubit.dart';
 import 'Network/local/shared_preferences.dart';
+
+
+
+
+
+
+
+
+
 import 'Network/remote/dioHelper.dart';
-import 'Test Screens ChatGPT/Old Game.dart';
-import 'Test Screens ChatGPT/tableTest.dart';
-import 'Test Screens ChatGPT/انيميشن/Animations.dart';
-import 'Test Screens ChatGPT/انيميشن/rotate.dart';
 import 'generated/assets.dart';
 
 
